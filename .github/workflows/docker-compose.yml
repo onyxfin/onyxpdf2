@@ -19,8 +19,15 @@ jobs:
       - name: Build Docker Compose Services
         run: docker compose build
 
-      - name: Stop and Remove Docker Compose Services
-        run: docker compose down
+
+      - name: Stop Existing Docker Compose Services
+        run: docker-compose down
 
       - name: Start Docker Compose Services
         run: docker compose up -d
+        
+      - name: Remove Unused Docker Images
+        run: docker image prune -f
+
+      - name: Check Docker Compose Services Status
+        run: docker compose ps -a
