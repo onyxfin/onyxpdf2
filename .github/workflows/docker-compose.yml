@@ -21,7 +21,7 @@ jobs:
 
 
       - name: Stop Existing Docker Compose Services
-        run: docker-compose down
+        run: docker compose down
 
       - name: Start Docker Compose Services
         run: docker compose up -d
