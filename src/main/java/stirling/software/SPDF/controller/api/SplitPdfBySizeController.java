@@ -10,8 +10,6 @@ import java.util.zip.ZipOutputStream;
 import org.apache.pdfbox.Loader;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -32,8 +30,6 @@ import stirling.software.SPDF.utils.WebResponseUtils;
 @RequestMapping("/api/v1/general")
 @Tag(name = "General", description = "General APIs")
 public class SplitPdfBySizeController {
-
-    private static final Logger logger = LoggerFactory.getLogger(SplitPdfBySizeController.class);
 
     @PostMapping(value = "/split-by-size-or-count", consumes = "multipart/form-data")
     @Operation(
@@ -70,7 +66,7 @@ public class SplitPdfBySizeController {
             }
 
         } catch (Exception e) {
-            logger.error("exception", e);
+            e.printStackTrace();
         } finally {
             data = Files.readAllBytes(zipFile);
             Files.deleteIfExists(zipFile);

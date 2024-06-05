@@ -106,7 +106,7 @@ public class BlankPageController {
                                     .replaceFirst("[.][^.]+$", "")
                             + "_blanksRemoved.pdf");
         } catch (IOException e) {
-            logger.error("exception", e);
+            e.printStackTrace();
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         } finally {
             if (document != null) document.close();

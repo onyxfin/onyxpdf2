@@ -11,8 +11,6 @@ import org.apache.pdfbox.Loader;
 import org.apache.pdfbox.cos.COSName;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDDocumentInformation;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -31,8 +29,6 @@ import stirling.software.SPDF.utils.WebResponseUtils;
 @RequestMapping("/api/v1/misc")
 @Tag(name = "Misc", description = "Miscellaneous APIs")
 public class MetadataController {
-
-    private static final Logger logger = LoggerFactory.getLogger(MetadataController.class);
 
     private String checkUndefined(String entry) {
         // Check if the string is "undefined"
@@ -140,7 +136,7 @@ public class MetadataController {
                 creationDateCal.setTime(
                         new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").parse(creationDate));
             } catch (ParseException e) {
-                logger.error("exception", e);
+                e.printStackTrace();
             }
             info.setCreationDate(creationDateCal);
         } else {
@@ -152,7 +148,7 @@ public class MetadataController {
                 modificationDateCal.setTime(
                         new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").parse(modificationDate));
             } catch (ParseException e) {
-                logger.error("exception", e);
+                e.printStackTrace();
             }
             info.setModificationDate(modificationDateCal);
         } else {

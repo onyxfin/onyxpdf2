@@ -2,7 +2,8 @@ version: '3.3'
 services:
   stirling-pdf:
     container_name: Stirling-PDF
-    image: frooodle/s-pdf:latest
+    build: .
+  #  image: frooodle/s-pdf:latest
     deploy:
       resources:
         limits:
@@ -30,4 +31,5 @@ services:
       SYSTEM_MAXFILESIZE: "100"
       METRICS_ENABLED: "true"
       SYSTEM_GOOGLEVISIBILITY: "true"
+      ENDPOINTS_TO_REMOVE: "ocr-pdf,pipeline"
     restart: on-failure:5

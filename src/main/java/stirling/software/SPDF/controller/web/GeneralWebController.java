@@ -15,8 +15,6 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
@@ -34,8 +32,6 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 @Controller
 @Tag(name = "General", description = "General APIs")
 public class GeneralWebController {
-
-    private static final Logger logger = LoggerFactory.getLogger(GeneralWebController.class);
 
     @GetMapping("/pipeline")
     @Hidden
@@ -78,7 +74,7 @@ public class GeneralWebController {
                 }
 
             } catch (IOException e) {
-                logger.error("exception", e);
+                e.printStackTrace();
             }
         }
         if (pipelineConfigsWithNames.size() == 0) {

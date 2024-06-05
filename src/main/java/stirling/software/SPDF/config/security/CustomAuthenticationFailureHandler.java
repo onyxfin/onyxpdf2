@@ -49,12 +49,10 @@ public class CustomAuthenticationFailureHandler extends SimpleUrlAuthenticationF
         }
 
         String username = request.getParameter("username");
-        Optional<User> optUser = userService.findByUsernameIgnoreCase(username);
-
-        if (username != null && optUser.isPresent() && !isDemoUser(optUser)) {
+        if (username != null && !isDemoUser(username)) {
             logger.info(
                     "Remaining attempts for user {}: {}",
-                    optUser.get().getUsername(),
+                    username,
                     loginAttemptService.getRemainingAttempts(username));
             loginAttemptService.loginFailed(username);
             if (loginAttemptService.isBlocked(username)
@@ -72,7 +70,8 @@ public class CustomAuthenticationFailureHandler extends SimpleUrlAuthenticationF
         super.onAuthenticationFailure(request, response, exception);
     }
 
-    private boolean isDemoUser(Optional<User> user) {
+    private boolean isDemoUser(String username) {
+        Optional<User> user = userService.findByUsernameIgnoreCase(username);
         return user.isPresent()
                 && user.get().getAuthorities().stream()
                         .anyMatch(authority -> "ROLE_DEMO_USER".equals(authority.getAuthority()));

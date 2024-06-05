@@ -262,7 +262,8 @@ public class AccountWebController {
                         userRepository.findByUsernameIgnoreCase(
                                 username); // Assuming findByUsername method exists
                 if (!user.isPresent()) {
-                    return "redirect:/error";
+                    // Handle error appropriately
+                    return "redirect:/error"; // Example redirection in case of error
                 }
 
                 // Convert settings map to JSON string
@@ -272,8 +273,8 @@ public class AccountWebController {
                     settingsJson = objectMapper.writeValueAsString(user.get().getSettings());
                 } catch (JsonProcessingException e) {
                     // Handle JSON conversion error
-                    logger.error("exception", e);
-                    return "redirect:/error";
+                    e.printStackTrace();
+                    return "redirect:/error"; // Example redirection in case of error
                 }
 
                 String messageType = request.getParameter("messageType");

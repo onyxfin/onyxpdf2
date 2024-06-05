@@ -15,8 +15,6 @@ import java.util.zip.ZipOutputStream;
 import org.apache.pdfbox.Loader;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.rendering.PDFRenderer;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -45,7 +43,6 @@ import stirling.software.SPDF.utils.WebResponseUtils;
 @Tag(name = "Misc", description = "Miscellaneous APIs")
 public class AutoSplitPdfController {
 
-    private static final Logger logger = LoggerFactory.getLogger(AutoSplitPdfController.class);
     private static final String QR_CONTENT = "https://github.com/Stirling-Tools/Stirling-PDF";
     private static final String QR_CONTENT_OLD = "https://github.com/Frooodle/Stirling-PDF";
 
@@ -118,7 +115,7 @@ public class AutoSplitPdfController {
                 zipOut.closeEntry();
             }
         } catch (Exception e) {
-            logger.error("exception", e);
+            e.printStackTrace();
         } finally {
             data = Files.readAllBytes(zipFile);
             Files.deleteIfExists(zipFile);

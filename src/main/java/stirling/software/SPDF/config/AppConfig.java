@@ -7,8 +7,6 @@ import java.nio.file.Paths;
 import java.util.Properties;
 import java.util.function.Predicate;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
@@ -25,8 +23,6 @@ import stirling.software.SPDF.model.ApplicationProperties;
 @Configuration
 @Lazy
 public class AppConfig {
-
-    private static final Logger logger = LoggerFactory.getLogger(AppConfig.class);
 
     @Autowired ApplicationProperties applicationProperties;
 
@@ -49,7 +45,7 @@ public class AppConfig {
     @Bean(name = "appName")
     public String appName() {
         String homeTitle = applicationProperties.getUi().getAppName();
-        return (homeTitle != null) ? homeTitle : "Stirling PDF";
+        return (homeTitle != null) ? homeTitle : "ONYX PDF";
     }
 
     @Bean(name = "appVersion")
@@ -60,7 +56,7 @@ public class AppConfig {
             props.load(resource.getInputStream());
             return props.getProperty("version");
         } catch (IOException e) {
-            logger.error("exception", e);
+            e.printStackTrace();
         }
         return "0.0.0";
     }
@@ -78,7 +74,7 @@ public class AppConfig {
                 applicationProperties.getUi().getAppNameNavbar() != null
                         ? applicationProperties.getUi().getAppNameNavbar()
                         : applicationProperties.getUi().getAppName();
-        return (defaultNavBar != null) ? defaultNavBar : "Stirling PDF";
+        return (defaultNavBar != null) ? defaultNavBar : "ONYX PDF";
     }
 
     @Bean(name = "enableAlphaFunctionality")

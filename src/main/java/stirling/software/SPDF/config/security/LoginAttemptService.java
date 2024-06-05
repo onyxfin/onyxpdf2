@@ -33,6 +33,7 @@ public class LoginAttemptService {
     }
 
     public void loginSucceeded(String key) {
+        logger.info(key + " " + attemptsCache.mappingCount());
         if (key == null || key.trim().isEmpty()) {
             return;
         }
