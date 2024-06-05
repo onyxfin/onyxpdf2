@@ -1,0 +1,29 @@
+name: Docker Compose Workflow
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Docker Compose
+        uses: docker/compose-cli-action@v0.1.0
+
+      - name: Build Docker Compose Services
+        run: docker compose build
+
+      - name: Stop and Remove Docker Compose Services
+        run: docker compose down
+
+      - name: Start Docker Compose Services
+        run: docker compose up -d
