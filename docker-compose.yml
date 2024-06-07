@@ -26,7 +26,7 @@ services:
       INSTALL_BOOK_AND_ADVANCED_HTML_OPS: "true"
       SYSTEM_DEFAULTLOCALE: en-US
       UI_APPNAME: ONYX PDF
-      UI_HOMEDESCRIPTION: Free all-in-one PDF editor brought to you by Onyx FIN Accounting
+     # UI_HOMEDESCRIPTION: Free all-in-one PDF editor brought to you by Onyx FIN Accounting
       UI_APPNAMENAVBAR: ONYX PDF
       SYSTEM_MAXFILESIZE: "100"
       METRICS_ENABLED: "true"
