@@ -1,0 +1,34 @@
+{
+  "about": {
+    "website": "https://onyxpdf.com",
+    "description": "The website ONYX PDF is intended for individuals, companies, craftsmen, institutions, and all interested parties who need to anonymously and freely edit PDF documents.",
+    "owner": {
+      "name": "ONYX FIN j.d.o.o.",
+      "headquarters": "Gornji Sroki 118, 51216 Viškovo",
+      "office": "Prolaz Marije K. Kozulić 2, 51000 Rijeka, business centre 'Zagrad'",
+      "web": "https://onyx-fin.com",
+      "email": "onyxpdf@onyx-fin.com"
+    }
+  },
+  "personalData": {
+    "policy": "ONYX PDF does not collect user data, and visitors cannot be uniquely identified through the user's IP address, fulfilling the rights to privacy and protection of personal data of all ONYX PDF users.",
+    "access": "Accessing and using ONYX PDF web applications is anonymous and free.",
+    "hosting": "The ONYX PDF web application is hosted on servers in the EU."
+  },
+  "cookies": {
+    "policy": "When using our web applications, the server that runs the web application uses cookies. These are very small text files that the server places on the user's computer for the purpose of monitoring the selection of individual language variants and other options of the same web applications.",
+    "security": "Cookies cannot be used to run programs or install viruses on your computer. Viewing our site is also possible without the use of cookies, if your internet browser is set that way."
+  },
+  "webApplication": {
+    "description": "ONYX PDF is a robust PDF management platform powered by Docker and backed by OpenSource software.",
+    "features": [
+      "simple operations such as merging and splitting PDFs",
+      "advanced features such as compression, OCR, and conversions"
+    ],
+    "privacyAndSecurity": "The platform guarantees utmost privacy and security as it doesn't make outbound calls for tracking or record keeping. All files and PDFs remain either on the client side, stored temporarily on the server during the execution of tasks, or within a transient file created specifically for task execution. Once the user downloads a file, it is immediately purged from the server."
+  },
+  "safetyOfUse": {
+    "disclaimer": "Use the ONYX PDF web application at your own risk. Unauthorized attempts to download or modify data at this location are technically not feasible as data is deleted from the server immediately after the user downloads the file.",
+    "note": "Please note that no method of transmission over the Internet is 100% secure and reliable and we cannot guarantee our absolute safety."
+  }
+}
