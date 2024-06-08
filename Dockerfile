@@ -3,7 +3,7 @@ FROM gradle:7.6-jdk17 AS build
 
 # Set the working directory
 WORKDIR /app
-
+ 
 # Copy the entire project to the working directory
 COPY . .
 
