@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html th:lang="${#locale.language}" th:dir="#{language.direction}" th:data-language="${#locale.toString()}" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <th:block th:insert="~{fragments/common :: head(title=#{licenses.title}, header=#{licenses.title})}"></th:block>
+</head>
+
+<body>
+    <div id="page-container">
+        <div id="content-wrap">
+            <th:block th:insert="~{fragments/navbar.html :: navbar}"></th:block>
+            <br><br>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="container">
+                        <h1>O web stranici ONYX PDF</h1>
+                        <p>Internet stranica <a href="https://onyxpdf.com">https://onyxpdf.com</a> (u nastavku ONYX PDF) namijenjena je pojedincima, poduzećima, obrtnicima, ustanovama, institucijama i svim zainteresiranima koji imaju potrebu uređivati PDF dokumente. Vlasnik i urednik ONYX PDF je tvrtka:</p>
+                        
+                        <address>
+                            <strong>ONYX FIN j.d.o.o.</strong><br>
+                            Sjedište: Gornji Sroki 118, 51216 Viškovo<br>
+                            Ured: Prolaz Marije K. Kozulić 2, 51000 Rijeka, poslovni centar Zagrad<br>
+                            Web: <a href="https://onyx-fin.com">https://onyx-fin.com</a><br>
+                            E-mail: <a href="mailto:onyxpdf@onyx-fin.com">onyxpdf@onyx-fin.com</a>
+                        </address>
+                        
+                        <h2>Osobni podaci</h2>
+                        <p>ONYX PDF ne prikuplja podatke korisnika a putem IP adrese korisnika ne može se jednoznačno identificirati posjetitelje, čime su ispunjena prava na privatnost i zaštitu osobnih podataka svih korisnika ONYX PDF. Pristup i korištenje web aplikacije ONYX PDF je anonimno i besplatno. Web aplikacija ONYX PDF smještena je na serverima u EU.</p>
+                        
+                        <h2>Kolačići</h2>
+                        <p>Prilikom korištenja naše web aplikacije, naš poslužitelj koji pokreće web aplikaciju koristi kolačiće. Radi se o jako malim tekstualnim datotekama koje poslužitelj postavlja na računalo korisnika u svrhu praćenja odabira pojedinih jezičnih varijanti i drugih opcija same web aplikacije. Kolačići se ne mogu koristiti za pokretanje programa ili postavljanje virusa na Vaše računalo. Pregled naših stranica moguć je i bez uporabe kolačića, ako je vaš internetski preglednik tako postavljen.</p>
+                        
+                        <h2>Web Aplikacija</h2>
+                        <p>ONYX PDF robusna je platforma za upravljanje PDF-om koju pokreće Docker, a iza koje stoji OpenSource platforma. Aplikacija nudi širok raspon funkcionalnosti, od jednostavnih operacija kao što su spajanje i razdvajanje PDF-ova do naprednih značajki kao što su sažimanje, OCR i pretvorbe.</p>
+                        
+                        <p>Platforma jamči najvišu privatnost i sigurnost budući da ne obavlja odlazne pozive radi praćenja ili vođenja evidencije. Sve datoteke i PDF-ovi ostaju ili na strani korisnika, privremeno pohranjeni na poslužitelju tijekom izvršavanja zadataka ili unutar prolazne datoteke stvorene posebno za izvršenje zadatka. Nakon što korisnik preuzme datoteku, ona se odmah briše s poslužitelja.</p>
+                        
+                        <h2>Sigurnost korištenja</h2>
+                        <p>Web aplikaciju ONYX PDF koristite na vlastitu odgovornost. Neovlašteni pokušaji preuzimanja ili izmjene podataka na ovoj lokaciji tehnički nisu izvedivi budući da se podaci brišu sa poslužitelja odmah nakon preuzimanja datoteke od strane korisnika, no imajte na umu da niti jedan način prijenosa putem interneta nije 100% siguran i pouzdan i ne možemo jamčiti apsolutnu sigurnost.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <th:block th:insert="~{fragments/footer.html :: footer}"></th:block>
+    </div>
+</body>
+</html>

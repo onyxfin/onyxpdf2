@@ -33,6 +33,13 @@ public class HomeWebController {
         return "terms-of-use";
     }
 
+    @GetMapping("/terms-of-use-hr")
+    @Hidden
+    public String termsOfUseHr(Model model) {
+        model.addAttribute("currentPage", "terms-of-use-hr");
+        return "terms-of-use-hr";
+    }
+
     @GetMapping("/licenses")
     @Hidden
     public String licensesForm(Model model) {
