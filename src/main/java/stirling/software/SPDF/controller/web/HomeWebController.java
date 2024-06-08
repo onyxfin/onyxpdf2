@@ -26,11 +26,11 @@ import stirling.software.SPDF.model.Dependency;
 @Controller
 public class HomeWebController {
 
-    @GetMapping("/about")
+    @GetMapping("/terms-of-use")
     @Hidden
-    public String gameForm(Model model) {
-        model.addAttribute("currentPage", "about");
-        return "about";
+    public String termsOfUse(Model model) {
+        model.addAttribute("currentPage", "terms-of-use");
+        return "terms-of-use";
     }
 
     @GetMapping("/licenses")

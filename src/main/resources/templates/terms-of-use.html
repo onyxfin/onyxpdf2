@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html th:lang="${#locale.language}" th:dir="#{language.direction}" th:data-language="${#locale.toString()}" xmlns:th="https://www.thymeleaf.org">
+  <head>
+  <th:block th:insert="~{fragments/common :: head(title=#{licenses.title}, header=#{licenses.title})}"></th:block>
+  </head>
+
+  <body>
+    <div id="page-container">
+      <div id="content-wrap">
+        <th:block th:insert="~{fragments/navbar.html :: navbar}"></th:block>
+        <br><br>
+        <div class="container">
+          <div class="row justify-content-center">
+            
+        
+            <div class="container">
+                <h1>About the ONYX PDF Website</h1>
+                <p>The website <a href="https://onyxpdf.com">ONYX PDF</a> is intended for individuals, companies, craftsmen, institutions, and all interested parties who need to anonymously and free edit PDF documents. The owner and editor of ONYX PDF is the company:</p>
+                <address>
+                  ONYX FIN j.d.o.o.<br>
+                  Headquarters: Gornji Sroki 118, 51216 Viškovo<br>
+                  Office: Prolaz Marije K. Kozulić 2, 51000 Rijeka, business centre "Zagrad"<br>
+                  Web: <a href="https://onyx-fin.com">https://onyx-fin.com</a><br>
+                  E-mail: <a href="mailto:onyxpdf@onyx-fin.com">onyxpdf@onyx-fin.com</a>
+                </address>
+                
+                <h2>Personal data</h2>
+                <p>ONYX PDF does not collect user data, and visitors cannot be uniquely identified through the user's IP address, which fulfils the rights to privacy and protection of personal data of all ONYX PDF users. Accessing and using ONYX PDF web applications is anonymous and free. The ONYX PDF web application is hosted on servers in the EU.</p>
+                
+                <h2>Cookies</h2>
+                <p>When using our web applications, the server that runs the web application uses cookies. These are very small text files that the server places on the user's computer for the purpose of monitoring the selection of individual language variants and other options of the same web applications. Cookies cannot be used to run programs or install viruses on your computer. Viewing our site is also possible without the use of cookies, if your internet browser is set that way.</p>
+                
+                <h2>Web application</h2>
+                <p>ONYX PDF is a robust PDF management platform powered by Docker and backed by an OpenSource software. The application offers a wide range of functionality, from simple operations such as merging and splitting PDFs to advanced features such as compression, OCR, and conversions.</p>
+                <p>The platform guarantees utmost privacy and security as it doesn't make outbound calls for tracking or record keeping. All files and PDFs remain either on the client side, stored temporarily on the server during the execution of tasks, or within a transient file created specifically for task execution. Once the user downloads a file, it is immediately purged from the server.</p>
+                
+                <h2>Safety of use</h2>
+                <p>Use the ONYX PDF web application at your own risk. Unauthorized attempts to download or modify data at this location are technically not feasible as data is deleted from the server immediately after the user downloads the file, but please note that no method of transmission over the Internet is 100% secure and reliable and we cannot guarantee our absolute safety.</p>
+              </div>
+           
+          </div>
+        </div>
+      </div>
+      <th:block th:insert="~{fragments/footer.html :: footer}"></th:block>
+    </div>
+  </body>
+</html>
